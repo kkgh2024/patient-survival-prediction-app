@@ -145,7 +145,4 @@ if submitted:
             f"**Probability:** {1 - probability:.2%}"
         )
 
-    st.caption(
-        "⚠️ This prediction is for educational purposes only and "
-        "should not be used for real medical decisions."
-    )
+
