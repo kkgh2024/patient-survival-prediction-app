@@ -5,7 +5,7 @@
 # --------------------------------------------------
 
 import streamlit as st
-import pandas as pd
+import pandas as pd#
 import joblib
 import numpy as np
 
@@ -31,13 +31,27 @@ st.write(
 # Load Model & Feature Schema
 # --------------------------------------------------
 
+#@st.cache_resource
+
+# def load_artifacts():
+#    model = joblib.load("models/gradient_boosting.pkl")
+#    feature_names = joblib.load("models/feature_names.pkl")
+#    return model, feature_names
+
+#model, feature_names = load_artifacts()
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 @st.cache_resource
 def load_artifacts():
-    model = joblib.load("models/gradient_boosting.pkl")
-    feature_names = joblib.load("models/feature_names.pkl")
+    model = joblib.load(BASE_DIR / "models" / "gradient_boosting.pkl")
+    feature_names = joblib.load(BASE_DIR / "models" / "feature_names.pkl")
     return model, feature_names
 
 model, feature_names = load_artifacts()
+st.caption(f"Model loaded with {len(feature_names)} features")
+
 
 # --------------------------------------------------
 # User Input Form
