@@ -164,3 +164,22 @@ if submitted:
             f"❌ **Predicted Outcome: Not Survived**\n\n"
             f"**Probability:** {(1 - probability):.2%}"
         )
+    # --------------------------------------------------
+    # Feature Importance (Model Explainability)
+    # --------------------------------------------------
+
+    st.subheader("📊 Feature Importance")
+
+    importance_df = pd.DataFrame({
+        "Feature": feature_names,
+        "Importance": model.feature_importances_
+    }).sort_values(by="Importance", ascending=False)
+
+    st.dataframe(importance_df.head(10))
+
+
+
+    st.caption(
+        "Top features influencing the model’s prediction "
+        "(based on Gradient Boosting feature importance)."
+      )
