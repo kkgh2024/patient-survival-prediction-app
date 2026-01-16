@@ -98,6 +98,27 @@ Exploratory visualizations
 
 Model performance evaluation (ROC, confusion matrix)
 
+## 📊 Dashboard Screenshots
+### 🔹 Application Interface
+Interactive form for entering patient demographic, clinical, and treatment data.
+
+![Application Interface](screenshots/app_input.png)
+
+---
+
+### 🔹 Prediction Output
+Predicted one-year survival outcome with probability-based risk scoring.
+
+![Prediction Result](screenshots/prediction_result.png)
+
+---
+
+### 🔹 Feature Importance
+Top features influencing the survival prediction using Gradient Boosting.
+
+![Feature Importance](screenshots/feature_importance.png)
+
+
 ## 📌 Notes
 
 The model and feature schema are persisted to ensure training–inference consistency
